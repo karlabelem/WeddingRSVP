@@ -1,5 +1,5 @@
 export type GuestInfo = {
-    guestName: string, brideOrGroom: "Molly" | "James",
+    guestName: string, brideOrGroom: "X" | "Y",
     additional: boolean | undefined, addName: string | undefined,
     familyTF: boolean, dietRes: string | undefined, addGuestRes: string | undefined
 }
