@@ -1,13 +1,13 @@
 import React, { Component, ChangeEvent, MouseEvent } from "react";
 
 type AddGuestProps = {
-    addingGuest: (guestName: string, brideOrGroom: "Molly" | "James", familyTF: boolean) => void;
+    addingGuest: (guestName: string, brideOrGroom: "X" | "Y", familyTF: boolean) => void;
     previousPage: () => void;
 }
 
 type AddGuestState = {
     guestName: string;
-    brideOrGroom: "" | "Molly" | "James";
+    brideOrGroom: "" | "X" | "Y";
     familyTF: boolean;
     messageError: "" | "Invalid input! You have to choose the host" | "Invalid input! You have to specify the guest's name";
 }
@@ -28,8 +28,8 @@ export class AddGuestPage extends Component<AddGuestProps, AddGuestState> {
             </div>
             <div>
                 <div><label>Guest of: </label></div>
-                <div><input type="radio" name="host" value="Molly" onChange={this.doMollyNameClick}></input> Molly </div>
-                <div><input type="radio" name="host" value="James" onChange={this.doJamesNameClick}></input> James </div>
+                <div><input type="radio" name="host" value="X" onChange={this.doXNameClick}></input> X </div>
+                <div><input type="radio" name="host" value="Y" onChange={this.doYNameClick}></input> Y </div>
             </div>
             <div>
                 <input type="checkbox" name="Family" value="Family" onChange={this.doFamilyTFClick}></input>Family
@@ -42,11 +42,11 @@ export class AddGuestPage extends Component<AddGuestProps, AddGuestState> {
     doUpdateNameChange = (evt: ChangeEvent<HTMLInputElement>): void => {
         this.setState({ guestName: evt.target.value, messageError: "" })
     }
-    doMollyNameClick = (_evt: ChangeEvent<HTMLInputElement>): void => {
-        this.setState({ brideOrGroom: "Molly", messageError: "" })
+    doXNameClick = (_evt: ChangeEvent<HTMLInputElement>): void => {
+        this.setState({ brideOrGroom: "X", messageError: "" })
     }
-    doJamesNameClick = (_evt: ChangeEvent<HTMLInputElement>): void => {
-        this.setState({ brideOrGroom: "James", messageError: "" })
+    doYNameClick = (_evt: ChangeEvent<HTMLInputElement>): void => {
+        this.setState({ brideOrGroom: "Y", messageError: "" })
     }
     doFamilyTFClick = (evt: ChangeEvent<HTMLInputElement>): void => {
         this.setState({ familyTF: evt.target.checked })
