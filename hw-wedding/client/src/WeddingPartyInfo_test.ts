@@ -4,37 +4,37 @@ import { GuestInfo, fromJson, toJson } from './WeddingPartyInfo'
 describe('GuestInfo', function () {
     it('toJson', function () {
         const guestsInformation1: GuestInfo = {
-            guestName: "Kevin", brideOrGroom: "James",
+            guestName: "Kevin", brideOrGroom: "Y",
             additional: true, addName: "Plus", familyTF: false,
             dietRes: "students", addGuestRes: "random"
         }
         assert.deepStrictEqual(toJson(guestsInformation1), [
-            "Kevin", "James", true, "Plus", false, "students", "random"
+            "Kevin", "Y", true, "Plus", false, "students", "random"
         ])
         const guestsInformation2: GuestInfo = {
-            guestName: "Bob", brideOrGroom: "Molly",
+            guestName: "Bob", brideOrGroom: "X",
             additional: false, addName: undefined, familyTF: true,
             dietRes: undefined, addGuestRes: undefined
         }
         assert.deepStrictEqual(toJson(guestsInformation2), [
-            "Bob", "Molly", false, undefined, true, undefined, undefined
+            "Bob", "X", false, undefined, true, undefined, undefined
         ])
     })
 
     it('fromJson', function () {
-        const reverseGuestsInformation1: unknown = ["Kevin", "James", true, "PlusOne", false,
+        const reverseGuestsInformation1: unknown = ["Kevin", "Y", true, "PlusOne", false,
             "students", "random"]
         assert.deepStrictEqual(fromJson(reverseGuestsInformation1), {
             guestName: "Kevin",
-            brideOrGroom: "James", additional: true, addName: "PlusOne", familyTF: false,
+            brideOrGroom: "Y", additional: true, addName: "PlusOne", familyTF: false,
             dietRes: "students", addGuestRes: "random"
         })
 
-        const reverseGuestsInformation2: unknown = ["Bob", "Molly", false, undefined, true,
+        const reverseGuestsInformation2: unknown = ["Bob", "X", false, undefined, true,
             undefined, undefined]
         assert.deepStrictEqual(fromJson(reverseGuestsInformation2), {
             guestName: "Bob",
-            brideOrGroom: "Molly", additional: false, addName: undefined, familyTF: true,
+            brideOrGroom: "X", additional: false, addName: undefined, familyTF: true,
             dietRes: undefined, addGuestRes: undefined
         })
     })
