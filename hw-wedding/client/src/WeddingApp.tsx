@@ -35,7 +35,7 @@ export class WeddingApp extends Component<{}, WeddingAppState> {
     }
   };
 
-  doAddingGuestClick = (guestName: string, brideOrGroom: "Molly" | "James", familyTF: boolean): void => {
+  doAddingGuestClick = (guestName: string, brideOrGroom: "X" | "Y", familyTF: boolean): void => {
     console.log("testing addGuest")
     const info: GuestInfo = {
       guestName: guestName,
